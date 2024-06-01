@@ -5,6 +5,7 @@ import Logo from "../../public/logos/Eshop-Logo.png";
 import Container from "../Container";
 import HeaderRightSection from "./HeaderRightSection";
 import SearchInput from "../Product/SearchInput";
+import SearchInputWrapper from "../Product/SearchInputWrapper";
 
 const Header = () => {
   return (
@@ -18,7 +19,7 @@ const Header = () => {
               </Link>
             </div>
             <div className="md:flex md:flex-row items-center justify-center hidden">
-              <SearchInput />
+              <SearchInputWrapper />
             </div>
             <div>
               <HeaderRightSection />

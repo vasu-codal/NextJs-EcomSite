@@ -1,7 +1,7 @@
 import Carousel from "../../components/Carousel";
 import Container from "../../components/Container";
 import sliderContent from "../../components/Data/sliderContent";
-import ProductList from "../../components/Product/ProductList";
+import ProductListWrapper from "../../components/Product/ProductListWrapper";
 
 async function getProducts() {
   return fetch("https://fakestoreapi.com/products").then((res) => res.json());
@@ -26,7 +26,7 @@ export default async function Home() {
             </h1>
           </div>
         </div>
-        <ProductList products={products} />
+        <ProductListWrapper products={products} />
       </Container>
     </div>
   );

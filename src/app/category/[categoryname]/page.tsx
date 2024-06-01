@@ -1,9 +1,6 @@
 import React from "react";
-import ProductCard, {
-  ProductType,
-} from "../../../../components/Product/ProductCard";
 import Container from "../../../../components/Container";
-import ProductList from "../../../../components/Product/ProductList";
+import ProductListWrapper from "../../../../components/Product/ProductListWrapper";
 
 export async function generateStaticParams() {
   const categories = await fetch(
@@ -26,7 +23,7 @@ export default async function Page({
 
   return (
     <Container>
-      <ProductList products={products} />
+      <ProductListWrapper products={products} />
     </Container>
   );
 }
