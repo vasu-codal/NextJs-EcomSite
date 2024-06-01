@@ -49,9 +49,10 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
               <Image
                 src={img?.src}
                 alt={img?.altText}
-                unoptimized
+                // unoptimized
                 width={0}
                 height={0}
+                quality={70}
                 sizes="100vw"
                 className="w-full h-[350px] object-cover"
               />

@@ -3,17 +3,26 @@ import React, { useState } from "react";
 import { CiShoppingCart } from "react-icons/ci";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { HiOutlineUser } from "react-icons/hi";
+import { useCart } from "../Hooks/useCart";
+import { useRouter } from "next/navigation";
 
 const HeaderRightSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const router = useRouter();
+  const { cartTotalQty } = useCart();
 
   return (
     <div className="flex flex-row items-center gap-10">
-      <div className="relative text-3xl text-slate-600 ">
+      <div
+        className="relative text-3xl text-slate-600 hover:cursor-pointer"
+        onClick={() => {
+          router?.push("/cart");
+        }}
+      >
         <CiShoppingCart />
         <div className="absolute size-6 -top-2 -right-2 rounded-full bg-slate-700 text-white text-lg ">
-          <span className="flex items-center justify-center text-center text-sm pt-[2px]">
-            7
+          <span className="flex items-center justify-center text-center text-sm pt-[3px]">
+            {cartTotalQty?.totalQty}
           </span>
         </div>
       </div>

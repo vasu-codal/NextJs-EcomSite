@@ -17,6 +17,8 @@ export interface ProductType {
     rate: number;
     count: number;
   };
+  quantity: number;
+  total: number;
 }
 
 interface ProductCardProps {

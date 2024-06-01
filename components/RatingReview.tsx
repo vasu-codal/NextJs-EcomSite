@@ -1,5 +1,5 @@
 import React from "react";
-import { FaRegStarHalfStroke } from "react-icons/fa6";
+import { IoMdStarHalf } from "react-icons/io";
 import { MdStarRate } from "react-icons/md";
 
 function RatingReview({ rating }: { rating: number }) {
@@ -19,7 +19,7 @@ function RatingReview({ rating }: { rating: number }) {
             // onClick={() => {}}
           >
             {rating < star && Math.ceil(rating) === star ? (
-              <FaRegStarHalfStroke />
+              <IoMdStarHalf size={21} />
             ) : (
               <MdStarRate />
             )}
