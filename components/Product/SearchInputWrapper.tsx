@@ -3,9 +3,11 @@ import SearchInput from "./SearchInput";
 
 const SearchInputWrapper = () => {
   return (
-    <Suspense>
-      <SearchInput />
-    </Suspense>
+    <>
+      <Suspense>
+        <SearchInput />
+      </Suspense>
+    </>
   );
 };
 
