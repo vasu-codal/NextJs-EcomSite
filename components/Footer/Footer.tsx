@@ -3,7 +3,11 @@ import FooterItems from "./FooterItems";
 import { FaFacebook } from "react-icons/fa";
 import { BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 
-const Footer = () => {
+const Footer = async () => {
+  const categories = await fetch(
+    "https://fakestoreapi.com/products/categories"
+  ).then((res) => res.json());
+
   return (
     <footer className="bg-slate-700 text-slate-200 text-sm mt-16">
       <div className=" max-w-[1920px] mx-auto xl:px-20 md:px-2 px-4">
@@ -11,10 +15,9 @@ const Footer = () => {
           <FooterItems>
             <h2 className="text-base font-bold mb-2">Shop Categories</h2>
             <div className="flex flex-col justify-center items-start gap-1">
-              <div>Phone</div>
-              <div>Tv</div>
-              <div>AC</div>
-              <div>Washing Machine</div>
+              {categories?.map((item: string, index: number) => {
+                return <div key={index}>{item?.toLocaleUpperCase()}</div>;
+              })}
             </div>
           </FooterItems>
           <FooterItems>
@@ -31,10 +34,9 @@ const Footer = () => {
             <h2 className="text-base font-bold mb-2">About Us</h2>
             <div className="flex flex-col justify-center items-start">
               <p className="pb-1">
-                At our electronics store, we are dedicated to providing the
+                At our E-commerec store, we are dedicated to providing the
                 latest and greatest devices and accessories to our customers.
-                With a wide selection of phones, TVs, laptops, watches, and
-                accessories.
+                With a wide selection of categories.
               </p>
               <span>
                 &copy;{new Date()?.getFullYear()} E-Shop. All rights reserved.
