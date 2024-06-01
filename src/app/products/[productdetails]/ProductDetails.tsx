@@ -40,17 +40,15 @@ const ProductDetails = ({
   };
 
   useEffect(() => {
-    setIsProductInCart(false);
     if (cartProducts) {
       const addedProduct = cartProducts.find(
         (cartProduct: ProductType) => cartProduct?.id === product?.id
       );
-
       if (addedProduct?.id) {
-        setIsProductInCart(true);
+        setIsProductInCart(addedProduct?.id ? true : false);
       }
     }
-  }, [cartProducts, product?.id]);
+  });
 
   const sucessNotify = () =>
     toast.success("Added Product To Cart Sucessfully!");

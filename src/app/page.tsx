@@ -1,14 +1,14 @@
 import Carousel from "../../components/Carousel";
 import Container from "../../components/Container";
 import sliderContent from "../../components/Data/sliderContent";
-import ProductCard, { ProductType } from "../../components/Product/ProductCard";
+import ProductList from "../../components/Product/ProductList";
 
 async function getProducts() {
   return fetch("https://fakestoreapi.com/products").then((res) => res.json());
 }
+
 export default async function Home() {
   const products = await getProducts();
-
   return (
     <div className="">
       <Container>
@@ -26,11 +26,7 @@ export default async function Home() {
             </h1>
           </div>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8 mt-8">
-          {products?.map((product: ProductType, index: number) => {
-            return <ProductCard product={product} key={index} />;
-          })}
-        </div>
+        <ProductList products={products} />
       </Container>
     </div>
   );

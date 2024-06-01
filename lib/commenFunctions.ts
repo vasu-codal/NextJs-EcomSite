@@ -5,5 +5,7 @@ export function setProductsToLocal(Key: string, CartProductArray: any) {
 
 export function getProductsFromLocal(Key: string) {
   const arrayString = localStorage?.getItem(Key);
-  return arrayString ? JSON.parse(arrayString) : null;
+  return arrayString && arrayString?.length > 0
+    ? JSON.parse(arrayString)
+    : null;
 }
