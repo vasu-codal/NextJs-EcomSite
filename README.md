@@ -15,7 +15,7 @@ E-Shop is a modern e-commerce platform built with Next.js, providing a seamless 
 
 ## Demo
 
-Check out the live demo [here](https://next-js-ecom-site-2a4w3urg3-vasu-sojitras-projects.vercel.app/).
+Check out the live demo [here](https://next-js-ecom-site.vercel.app/).
 
 
 ## Installation
