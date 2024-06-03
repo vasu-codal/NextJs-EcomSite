@@ -154,7 +154,9 @@ const Cart = () => {
                 <p className="text-slate-500">
                   Taxes and shipping calculated at checkout
                 </p>
-                <Button name="Login To Checkout" outline />
+                <Link href={"/register"}>
+                  <Button name="Login To Checkout" outline />
+                </Link>
                 <div className="flex text-sm text-slate-400 items-center gap-3">
                   <Link href={"/"}>
                     <span className="pr-2 inline-block align-middle">
