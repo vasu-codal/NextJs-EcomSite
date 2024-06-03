@@ -23,20 +23,18 @@ const ProductDetails = ({
   const router = useRouter();
 
   const hadleProductQty = (action: string) => {
-    if (action === "increase") {
-      setProduct((prev) => ({
+    setProduct((prev: any) => {
+      let tempTotal =
+        action === "increase"
+          ? prev?.price * (prev?.quantity + 1)
+          : prev?.price * (prev?.quantity - 1);
+      return {
         ...prev,
-        quantity: prev?.quantity + 1,
-        total: prev?.price * (prev?.quantity + 1),
-      }));
-    }
-    if (action === "decrease") {
-      setProduct((prev) => ({
-        ...prev,
-        quantity: prev?.quantity - 1,
-        total: prev?.price * (prev?.quantity - 1),
-      }));
-    }
+        quantity:
+          action === "increase" ? prev?.quantity + 1 : prev?.quantity - 1,
+        total: tempTotal?.toFixed(2),
+      };
+    });
   };
 
   useEffect(() => {
