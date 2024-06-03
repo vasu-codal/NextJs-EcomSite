@@ -1,6 +1,12 @@
 import React from "react";
 import Container from "../../../../components/Container";
 import ProductListWrapper from "../../../../components/Product/ProductListWrapper";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Product By Category",
+  description: "E-Commerce Site Product section",
+};
 
 export async function generateStaticParams() {
   const categories = await fetch(
