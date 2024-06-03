@@ -169,7 +169,7 @@ const Cart = () => {
         )}
         {cartProducts && cartProducts?.length === 0 && (
           <div className="text-lg text-slate-400 mt-4">
-            <Link href={"/"}>
+            <Link href={"/register"}>
               <span className="pr-2 inline-block">
                 <GoArrowLeft />
               </span>
