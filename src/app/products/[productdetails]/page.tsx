@@ -23,6 +23,8 @@ export async function generateMetadata({
         },
       ],
     },
+    locale: "en_US",
+    type: "website",
   };
 }
 
