@@ -31,7 +31,7 @@ const ProductList = ({ products }: { products: ProductType[] }) => {
       {productList?.length > 0 ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8 mt-8">
           {productList?.map((product: ProductType, index: number) => {
-            return <ProductCard product={product} key={index} />;
+            return <ProductCard product={product} key={product?.id} />;
           })}
         </div>
       ) : (

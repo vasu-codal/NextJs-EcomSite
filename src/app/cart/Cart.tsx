@@ -45,10 +45,10 @@ const Cart = () => {
               <div className="justify-self-end">TOTAL</div>
             </div>
 
-            {cartProducts?.map((product, index) => {
+            {cartProducts?.map((product) => {
               return (
                 <>
-                  <div key={index}>
+                  <div key={product?.id}>
                     <RenderColl>
                       <div className="col-span-2 justify-self-start flex gap-2 md:gap-4">
                         <div className="col-span-2 justify-self-start flex gap-2 md:gap-4">

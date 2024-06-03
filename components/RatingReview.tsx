@@ -5,10 +5,10 @@ import { MdStarRate } from "react-icons/md";
 function RatingReview({ rating }: { rating: number }) {
   return (
     <div className="flex flex-row text-xl">
-      {[1, 2, 3, 4, 5].map((star, index) => {
+      {[1, 2, 3, 4, 5].map((star) => {
         return (
           <span
-            key={index}
+            key={star}
             className=""
             style={{
               color:

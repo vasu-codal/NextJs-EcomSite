@@ -16,11 +16,11 @@ const Footer = async () => {
           <FooterItems>
             <h2 className="text-base font-bold mb-2">Shop Categories</h2>
             <div className="flex flex-col justify-center items-start gap-1">
-              {categories?.map((item: string, index: number) => {
+              {categories?.map((item: string) => {
                 return (
                   <Link
                     href={`/category/${item}`}
-                    key={index}
+                    key={item}
                     className="hover:underline hover:text-slate-500"
                   >
                     {item?.toLocaleUpperCase()}
