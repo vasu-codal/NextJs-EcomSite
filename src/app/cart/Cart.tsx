@@ -156,7 +156,7 @@ const Cart = () => {
                 </p>
                 <Button name="Login To Checkout" outline />
                 <div className="flex text-sm text-slate-400 items-center gap-3">
-                  <Link href={"/"}>
+                  <Link href={"/register"}>
                     <span className="pr-2 inline-block align-middle">
                       <GoArrowLeft />
                     </span>
@@ -169,7 +169,7 @@ const Cart = () => {
         )}
         {cartProducts && cartProducts?.length === 0 && (
           <div className="text-lg text-slate-400 mt-4">
-            <Link href={"/register"}>
+            <Link href={"/"}>
               <span className="pr-2 inline-block">
                 <GoArrowLeft />
               </span>
