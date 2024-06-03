@@ -11,7 +11,9 @@ const Poppins_Fonts = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata: Metadata = {
   title: "E-shop",
   description: "E-Commerce site",
-  metadataBase: new URL(process?.env?.VERCEL_URL || `http://localhost:${3000}`),
+  metadataBase: process.env.VERCEL_URL
+    ? new URL(`https://${process.env.VERCEL_URL}`)
+    : new URL(`http://localhost:${process.env.PORT || 3000}`),
 };
 
 export default function RootLayout({
