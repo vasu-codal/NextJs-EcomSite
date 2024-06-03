@@ -35,7 +35,7 @@ const page = () => {
             />
           </div>
           <div className="my-1">
-            <Button name="Sign Up" onClick={() => {}} />
+            <Button name="Login" onClick={() => {}} />
           </div>
           <div className="text-sm text-center">
             Do not have an account?{" "}
