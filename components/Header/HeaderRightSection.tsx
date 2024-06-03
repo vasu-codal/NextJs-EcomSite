@@ -5,6 +5,10 @@ import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { HiOutlineUser } from "react-icons/hi";
 import { useCart } from "../Hooks/useCart";
 import { useRouter } from "next/navigation";
+import Menu from "../Menu/Menu";
+import MenuItem from "../Menu/MenuItem";
+import Backdrop from "../Menu/Backdrop";
+import Link from "next/link";
 
 const HeaderRightSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -26,16 +30,37 @@ const HeaderRightSection = () => {
           </span>
         </div>
       </div>
-      <div
-        className="flex flex-row text-2xl  text-slate-600 gap-1 rounded-3xl border-[1px] border-slate-400 py-2 px-2 hover:shadow-md duration-200 hover:cursor-pointer"
-        onClick={() => {
-          setIsMenuOpen(!isMenuOpen);
-        }}
-      >
-        <span>
-          <HiOutlineUser />
-        </span>
-        <span>{isMenuOpen ? <FaCaretUp /> : <FaCaretDown />}</span>
+      <div className="relative">
+        <div
+          className="flex flex-row text-2xl  text-slate-600 gap-1 rounded-3xl border-[1px] border-slate-400 py-2 px-2 hover:shadow-md duration-200 hover:cursor-pointer"
+          onClick={() => {
+            setIsMenuOpen(!isMenuOpen);
+          }}
+        >
+          <span>
+            <HiOutlineUser />
+          </span>
+          <span>{isMenuOpen ? <FaCaretUp /> : <FaCaretDown />}</span>
+        </div>
+        {isMenuOpen && (
+          <>
+            <Menu
+              onClose={() => {
+                setIsMenuOpen(false);
+              }}
+            >
+              <MenuItem href={"/login"}>Login</MenuItem>
+              <MenuItem href={"/register"}>Register</MenuItem>
+            </Menu>
+            <span
+              onClick={() => {
+                setIsMenuOpen(false);
+              }}
+            >
+              <Backdrop />
+            </span>
+          </>
+        )}
       </div>
     </div>
   );

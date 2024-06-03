@@ -43,9 +43,9 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
           transform: `translateX(-${currentSlider * 100}%)`,
         }}
       >
-        {slides.map((img, index) => {
+        {slides.map((img) => {
           return (
-            <span key={index} className="min-w-full">
+            <span key={img?.altText} className="min-w-full">
               <Image
                 src={img?.src}
                 alt={img?.altText}
