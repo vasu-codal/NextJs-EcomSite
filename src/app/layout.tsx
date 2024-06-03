@@ -21,6 +21,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={Poppins_Fonts.className}>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="favicon_io/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="favicon_io/favicon-16x16.png"
+        />
+        <link rel="manifest" href="favicon_io/site.webmanifest" />
         <CartProvider>
           <Header />
           <div className="min-h-[calc(100vh_-_430px)] ">
