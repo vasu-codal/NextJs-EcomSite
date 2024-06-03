@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import RegisterForm from "./RegisterForm";
 
 export const metadata: Metadata = {
-  title: "Login",
-  description: "E-Commerce Site Login section",
+  title: "Sign Up",
+  description: "E-Commerce Site Sign Up section",
 };
 
 const page = () => {
